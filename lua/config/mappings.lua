@@ -27,3 +27,5 @@ vim.lsp.buf.signature_help()
 end, { silent = true, noremap = true, desc = 'toggle signature' })
 
 vim.api.nvim_set_keymap('n', 'gh', ':ClangdSwitchSourceHeader<CR>', default_opts)
+
+vim.api.nvim_set_keymap('n', '<leader>t', ':ToggleTerm<CR>', { silent = true, noremap = true, desc = 'Toggle terminal' })
