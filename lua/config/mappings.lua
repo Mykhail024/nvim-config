@@ -47,7 +47,7 @@ local function toggle_inlay_hints(buf, mode)
         vim.api.nvim_create_autocmd("InsertEnter", { group = group, buffer = buf, callback = function() vim.lsp.inlay_hint.enable(false) end })
         vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave" }, { group = group, buffer = buf, callback = function() vim.lsp.inlay_hint.enable(true) end })
     end
-    vim.g.Clangd_inlay_mode = mode or "default"
+    vim.g.GInlay_hints = mode or "default"
 end
 
 vim.keymap.set("n", "<leader>li", function()
@@ -62,4 +62,4 @@ vim.keymap.set("n", "<leader>la", function()
     toggle_inlay_hints(buf, "always")
 end, { buffer = buf, desc = "[l]sp [a]lways show inlay [h]ints" })
 
-toggle_inlay_hints(buf, vim.g.Inlay_hints)
+toggle_inlay_hints(buf, vim.g.GInlay_hints)
