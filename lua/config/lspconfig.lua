@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = { "clangd", "cssls", "glsl_analyzer", "html", "cmake", "bashls", "jsonls", "phpactor", "sqlls", "lua_ls"}
+    ensure_installed = { "clangd", "cssls", "glsl_analyzer", "html", "cmake", "bashls", "jsonls", "phpactor", "sqlls", "lua_ls", "pyright"}
 }
 
 require("mason-lspconfig").setup_handlers {
@@ -12,6 +12,10 @@ require("mason-lspconfig").setup_handlers {
 
 local lspconfig = require 'lspconfig'
 local configs = require 'lspconfig.configs'
+
+require'lspconfig'.clangd.setup{
+    cmd = {"/usr/bin/clangd", "-j=8", "--malloc-trim", "--background-index=true", "--pch-storage=memory", "-log=error", "--limit-results=500", "-clang-tidy", "--experimental-modules-support"}
+}
 
 if not configs.qmlls then
     configs.qmlls = {
