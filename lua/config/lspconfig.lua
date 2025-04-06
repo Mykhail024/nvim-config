@@ -1,6 +1,6 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensure_installed = { "clangd", "cssls", "glsl_analyzer", "html", "cmake", "bashls", "jsonls", "phpactor", "sqlls", "lua_ls", "pyright"}
+    ensure_installed = { "clangd", "cssls", "glsl_analyzer", "html", "cmake", "bashls", "jsonls", "phpactor", "sqlls", "lua_ls", "pyright", "emmet_ls", "tailwindcss", "jsonls"}
 }
 
 require("mason-lspconfig").setup_handlers {
@@ -28,3 +28,15 @@ if not configs.qmlls then
     }
 end
 lspconfig.qmlls.setup {}
+
+local mason_tool_installer = require("mason-tool-installer")
+
+mason_tool_installer.setup({
+    ensure_installed = {
+        "prettier", -- prettier formatter
+        "isort", -- python formatter
+        "black", -- python formatter
+        "pylint", -- python linter
+        "eslint_d", -- js linter
+    },
+})
