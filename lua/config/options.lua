@@ -14,7 +14,7 @@ vim.cmd([[
     set scrolloff=12
     set clipboard=unnamedplus
 
-    filetype plugin on
+    filetype plugin indent on
     syntax on
 ]])
 
