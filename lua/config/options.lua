@@ -1,15 +1,12 @@
+vim.opt.ssop:append({ 'globals', 'tabpages', 'folds' })
+
 vim.cmd([[
     set number
     set autoindent
-    set expandtab
-    set tabstop=4
-    set shiftwidth=4
     set smarttab
     set noswapfile
     set noshowmode
     set mouse=a
-    set foldmethod=syntax
-    set nofoldenable
     set encoding=UTF-8
     set scrolloff=12
     set clipboard=unnamedplus
@@ -21,7 +18,6 @@ vim.cmd([[
 vim.o.guifont = "Source Code Pro:h10.5"
 vim.g.neovide_scale_factor = 1.0
 
-vim.opt.ssop:append({ 'globals', 'tabpages' })
 
 -- Helper function for transparency formatting
 local alpha = function()
@@ -29,7 +25,7 @@ local alpha = function()
 end
 
 -- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
-vim.g.neovide_transparency = 0.90
+vim.g.neovide_opacity = 0.90
 vim.g.transparency = 0
 vim.g.neovide_background_color = "#0f1117" .. alpha()
 vim.g.neovide_window_blurred = true
