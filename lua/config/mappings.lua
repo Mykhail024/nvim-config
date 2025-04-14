@@ -63,3 +63,12 @@ vim.keymap.set("n", "<leader>la", function()
 end, { buffer = buf, desc = "[l]sp [a]lways show inlay [h]ints" })
 
 toggle_inlay_hints(buf, vim.g.GInlay_hints)
+
+-- LDAP
+vim.keymap.set('n', '<F5>', ":CMakeDebug<CR>", { silent = true, desc = "Start CMake Debug" })
+vim.keymap.set('n', '<F9>', function() require'dap'.continue() end, { desc = "Debug: continue" })
+vim.keymap.set('n', '<F10>', function() require'dap'.step_over() end, { desc = "Debug: step_over" })
+vim.keymap.set('n', '<F11>', function() require'dap'.step_into() end, { desc = "Debug: step_into" })
+vim.keymap.set('n', '<F12>', function() require'dap'.step_out() end, { desc = "Debug: step_out" })
+vim.keymap.set('n', '<Leader>b', function() require'dap'.toggle_breakpoint() end, { desc = "Debug: toggle_breakpoint" })
+
