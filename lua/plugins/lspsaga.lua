@@ -3,9 +3,13 @@ return {
     config = function()
         require('lspsaga').setup({
             diagnostic = {
+                keys = {
+                    quit = {'q', '<ESC>'}
+                },
                 show_code_action = true,
                 show_source = true,
                 jump_num_shortcut = true,
+                scroll_preview = true,
                 --virtual_text = true, -- це важливо
                 --diagnostic_only_current = true,
                 --show_line_diagnostics = true

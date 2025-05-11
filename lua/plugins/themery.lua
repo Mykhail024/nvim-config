@@ -3,7 +3,7 @@ return {
     lazy = false,
     config = function()
       require("themery").setup({
-             themes = {"onedark"}
+             themes = {"onedark", "kanagawa"}
       })
     end
 }
