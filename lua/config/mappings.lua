@@ -62,7 +62,7 @@ vim.keymap.set("n", "<leader>la", function()
     toggle_inlay_hints(buf, "always")
 end, { buffer = buf, desc = "[l]sp [a]lways show inlay [h]ints" })
 
-toggle_inlay_hints(buf, vim.g.GInlay_hints)
+toggle_inlay_hints(buf, vim.g.GInlay_hints or "default")
 
 -- LDAP
 vim.keymap.set('n', '<F5>', ":CMakeDebug<CR>", { silent = true, desc = "Start CMake Debug" })
