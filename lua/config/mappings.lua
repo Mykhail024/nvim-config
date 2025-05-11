@@ -72,3 +72,8 @@ vim.keymap.set('n', '<F11>', function() require'dap'.step_into() end, { desc = "
 vim.keymap.set('n', '<F12>', function() require'dap'.step_out() end, { desc = "Debug: step_out" })
 vim.keymap.set('n', '<Leader>b', function() require'dap'.toggle_breakpoint() end, { desc = "Debug: toggle_breakpoint" })
 
+-- LSPsaga
+vim.keymap.set("n", "<Leader>ldl", "<cmd>Lspsaga show_line_diagnostics<CR>")
+vim.keymap.set("n", "<Leader>ldb", "<cmd>Lspsaga show_buf_diagnostics<CR>")
+vim.keymap.set("n", "<Leader>ldw", "<cmd>Lspsaga show_workspace_diagnostics<CR>")
+vim.keymap.set("n", "<Leader>ldc", "<cmd>Lspsaga code_action<CR>")

@@ -1,3 +1,5 @@
+vim.diagnostic.config({ virtual_text = true })
+
 require("config.lazy")
 require("config.mappings")
 require("config.options")
